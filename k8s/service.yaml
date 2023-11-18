@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: computerwtf-service
+spec:
+  selector:
+    app: computerwtf
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 8080
+  type: ClusterIP

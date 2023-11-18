@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: computerwtf-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: computerwtf
+  template:
+    metadata:
+      labels:
+        app: computerwtf
+    spec:
+      containers:
+      - name: computerwtf
+        image: registry.digitalocean.com/er-registry/computerwtf:localtest
+        ports:
+        - containerPort: 8080
